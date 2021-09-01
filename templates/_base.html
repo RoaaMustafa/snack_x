@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load tailwind_tags %}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -16,9 +17,11 @@
 
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 {% endblock %}
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+{% tailwind_css %}
 </head>
 
-<body>
+<body class="bg-yellow-300">
   <main role="main">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal">
@@ -48,7 +51,6 @@
       </nav>
     </div>
   </main>
-
   <div class="container">
     {% block content %}
       <p>Default content...</p>
@@ -57,7 +59,7 @@
 
   <footer class="footer">
     <div class="container">
-      <span class="text-muted">Footer...</span>
+      <span class="text-muted">&copy; Reserved by Roaa Mustafa /ASAC</span>
     </div>
   </footer>
 

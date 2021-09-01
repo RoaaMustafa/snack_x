@@ -33,6 +33,12 @@ INSTALLED_APPS = [
     # Local
     'accounts',
     'pages',
+    'snacks',
+    # other Django apps
+    'tailwind',
+    'theme',
+    
+    
 ]
 
 # MIDDLEWARE
@@ -171,3 +177,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+TAILWIND_APP_NAME = 'theme'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+]
+
+STATIC_ROOT = "/var/www/example.com/static/"
