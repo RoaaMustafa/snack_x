@@ -9,48 +9,6 @@ $ git clone https://github.com/wsvincent/djangox.git
 $ cd djangox
 ```
 
-### Pip
-
-```bash
-$ python3 -m venv djangox
-$ source djangox/bin/activate
-(djangox) $ pip install -r requirements.txt
-(djangox) $ python manage.py migrate
-(djangox) $ python manage.py createsuperuser
-(djangox) $ python manage.py runserver
-# Load the site at http://127.0.0.1:8000
-```
-
-### Pipenv
-
-```bash
-$ pipenv install
-$ pipenv shell
-(djangox) $ python manage.py migrate
-(djangox) $ python manage.py createsuperuser
-(djangox) $ python manage.py runserver
-# Load the site at http://127.0.0.1:8000
-```
-
-### Docker
-
-```bash
-$ docker build .
-$ docker-compose up -d
-$ docker-compose exec web python manage.py migrate
-$ docker-compose exec web python manage.py createsuperuser
-# Load the site at http://127.0.0.1:8000
-```
-
-For Docker, the `INTERNAL_IPS` configuration in `config/settings.py` must be updated to the following:
-
-```python
-# config/settings.py
-# django-debug-toolbar
-import socket
-hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
-```
 
 ## Setup
 
@@ -66,3 +24,4 @@ INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 
 # Load the site at http://127.0.0.1:8000
 ```
+## PR: https://github.com/RoaaMustafa/snack_x/pull/1
